@@ -38,7 +38,7 @@ async function startScript() {
             console.log(a.username)
         }), await sleep(g(400 * Math.random()) + 1e3), scrollCicle++, 6 < scrollCicle && (scrollCicle = 0, console.log("%c Sleeping 10 secs to prevent getting temp blocked", "background: #222; color: ##FF0000;font-size: 35px;"), await sleep(1e4))
     }
-    c = JSON.stringify(filteredList), d = "usersNotFollowingBack.json", e = "application/json", b = document.createElement("a"), f = new Blob([c], {
+    c = JSON.stringify(thisFilteredList), d = "usersNotFollowingBack.json", e = "application/json", b = document.createElement("a"), f = new Blob([c], {
         type: e
     }), b.href = URL.createObjectURL(f), b.download = d, b.click(), console.log("%c All DONE!", "background: #222; color: #bada55;font-size: 25px;")
 }
