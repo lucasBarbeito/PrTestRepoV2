@@ -33,7 +33,7 @@ async function startScript() {
             continue
         }
         followedPeople || (followedPeople = a.data.user.edge_follow.count), doNext = a.data.user.edge_follow.page_info.has_next_page, initialURL = afterUrlGenerator(a.data.user.edge_follow.page_info.end_cursor), getUnfollowCounter += a.data.user.edge_follow.edges.length, a.data.user.edge_follow.edges.forEach(a => {
-            a.node.follows_viewer || filteredList.push(a.node)
+            a.node.follows_viewer || thisFilteredList.push(a.node)
         }), console.clear(), console.log(`%c Progress ${getUnfollowCounter}/${followedPeople} (${parseInt(100*(getUnfollowCounter/followedPeople))}%)`, "background: #222; color: #bada55;font-size: 35px;"), console.log("%c This users don't follow you (Still in progress)", "background: #222; color: #FC4119;font-size: 13px;"), filteredList.forEach(a => {
             console.log(a.username)
         }), await sleep(g(400 * Math.random()) + 1e3), scrollCicle++, 6 < scrollCicle && (scrollCicle = 0, console.log("%c Sleeping 10 secs to prevent getting temp blocked", "background: #222; color: ##FF0000;font-size: 35px;"), await sleep(1e4))
