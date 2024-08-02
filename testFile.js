@@ -21,7 +21,7 @@ let followedPeople, csrftoken = getCookie("csrftoken"),
     ds_user_id = getCookie("ds_user_id"),
     initialURL = `https://www.instagram.com/graphql/query/?query_hash=3dec7e2c57367ef3da3d987d89f9dbc8&variables={"id":"${ds_user_id}","include_reel":"true","fetch_mutual":"false","first":"24"}`,
     doNext = !0,
-    filteredList = [],
+    thisfilteredList = [],
     getUnfollowCounter = 0,
     scrollCicle = 0;
 async function startScript() {
